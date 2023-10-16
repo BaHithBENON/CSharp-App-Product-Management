@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{A34C29A7-764C-40CA-B919-DE69FACA1752}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RestaurantManagement</RootNamespace>
+    <AssemblyName>RestaurantManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="MySql.Data" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="db\OrderDao.cs" />
+    <Compile Include="db\PaymentDao.cs" />
+    <Compile Include="db\ProductDao.cs" />
+    <Compile Include="db\SingletonDBAccess.cs" />
+    <Compile Include="db\UserDao.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\Order.cs" />
+    <Compile Include="models\Payment.cs" />
+    <Compile Include="models\Product.cs" />
+    <Compile Include="models\ProductImage.cs" />
+    <Compile Include="models\Recipe.cs" />
+    <Compile Include="models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ui\AddOrderUI.cs" />
+    <Compile Include="ui\AddOrderUI.Designer.cs">
+      <DependentUpon>AddOrderUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\AddPaymentUI.cs" />
+    <Compile Include="ui\AddPaymentUI.Designer.cs">
+      <DependentUpon>AddPaymentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\AdminDashboard.cs" />
+    <Compile Include="ui\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\AuthUI.cs" />
+    <Compile Include="ui\AuthUI.Designer.cs">
+      <DependentUpon>AuthUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ChefDashboardUI.cs" />
+    <Compile Include="ui\ChefDashboardUI.Designer.cs">
+      <DependentUpon>ChefDashboardUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditProductUI.cs" />
+    <Compile Include="ui\EditProductUI.Designer.cs">
+      <DependentUpon>EditProductUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditUser.cs" />
+    <Compile Include="ui\EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\OrdersList.cs" />
+    <Compile Include="ui\OrdersList.Designer.cs">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\OrderValidatorUI.cs" />
+    <Compile Include="ui\OrderValidatorUI.Designer.cs">
+      <DependentUpon>OrderValidatorUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\PaymentsUI.cs" />
+    <Compile Include="ui\PaymentsUI.Designer.cs">
+      <DependentUpon>PaymentsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\ProductDetailsUI.cs" />
+    <Compile Include="ui\ProductDetailsUI.Designer.cs">
+      <DependentUpon>ProductDetailsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\RecipesUI.cs" />
+    <Compile Include="ui\RecipesUI.Designer.cs">
+      <DependentUpon>RecipesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\RestaurateurUI.cs" />
+    <Compile Include="ui\RestaurateurUI.Designer.cs">
+      <DependentUpon>RestaurateurUI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\AddOrderUI.resx">
+      <DependentUpon>AddOrderUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\AddPaymentUI.resx">
+      <DependentUpon>AddPaymentUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\AuthUI.resx">
+      <DependentUpon>AuthUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\ChefDashboardUI.resx">
+      <DependentUpon>ChefDashboardUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditProductUI.resx">
+      <DependentUpon>EditProductUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\OrdersList.resx">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\OrderValidatorUI.resx">
+      <DependentUpon>OrderValidatorUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\PaymentsUI.resx">
+      <DependentUpon>PaymentsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\ProductDetailsUI.resx">
+      <DependentUpon>ProductDetailsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\RecipesUI.resx">
+      <DependentUpon>RecipesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\RestaurateurUI.resx">
+      <DependentUpon>RestaurateurUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models" />
+    <Folder Include="db" />
+    <Folder Include="ui" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
